@@ -1,4 +1,5 @@
 /**
+ * fifteen: 三数之和
  * 解题思路
  * 1. 暴力求解：排列组合，遍历所有可能，去重
  */
@@ -78,3 +79,4 @@ function threeSum (nums = []) {
     }
     return result;
 }
+

@@ -1,4 +1,5 @@
 /**
+ * seventy: 爬楼梯
  * 解题思路
  * 推出公式：f(n) = f(n - 1) + f(n - 2)
  * 1. 递归的方式求值
@@ -47,3 +48,4 @@ function climbStairs(n) {
     const c = 1 / Math.sqrt(5);
     return (a - b) * c;
 };
+
