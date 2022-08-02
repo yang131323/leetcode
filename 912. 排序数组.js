@@ -107,6 +107,7 @@ function swap (arr, first, second) {
 
 /**
  * 2. 快排 - 双路快排
+ * 将目标元素后面的元素分为两部分：将等于目标评分到前后两部分
  * @param {number[]} nums
  * @return {number[]}
  */
@@ -136,6 +137,7 @@ function quickSort (arr, left, right) {
 
 /**
  * 2. 快排 - 三路快排
+ * 将目标元素后面的内容分为三部分
  * @param {number[]} nums
  * @return {number[]}
  */
