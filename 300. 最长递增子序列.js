@@ -1,5 +1,5 @@
 /**
- * three hundred: 最长递增子序列
+ * three hundred: 300. 最长递增子序列
  * 解题思路
  * 1. 动态规划
  */

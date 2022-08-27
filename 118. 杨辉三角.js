@@ -1,5 +1,5 @@
 /**
- * one hundred eighteen: 杨辉三角
+ * one hundred eighteen: 118. 杨辉三角
  * 解题思路
  * 1. 模拟
  */

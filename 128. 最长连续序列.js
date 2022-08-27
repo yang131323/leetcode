@@ -1,5 +1,5 @@
 /**
- * one hundred twenty eight: 最长连续序列
+ * one hundred twenty eight: 128. 最长连续序列
  * 解题思路
  * 1. 迭代寻找下一个
  */

@@ -1,5 +1,5 @@
 /**
- * two-hundred-and-six: 反转链表
+ * two-hundred-and-six: 206. 反转链表
  * 解题思路
  * 1. 链表的指向逆转
  */

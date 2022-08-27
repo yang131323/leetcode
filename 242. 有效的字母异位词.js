@@ -1,5 +1,5 @@
 /**
- * two-hundred-and-fofty-two: 有效的字母异位词
+ * two-hundred-and-fofty-two: 242. 有效的字母异位词
  * 1. 暴力：map存每个字符，一个加一个减
  * 2. 排序后进行对比
  */

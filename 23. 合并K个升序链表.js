@@ -1,5 +1,5 @@
 /**
- * twenty-three: 合并K个升序链表
+ * twenty-three: 23. 合并K个升序链表
  * 解题思路：
  * 1. 暴力
  */

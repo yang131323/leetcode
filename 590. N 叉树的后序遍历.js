@@ -1,5 +1,5 @@
 /**
- * five-hundred-and-ninety: N 叉树的后序遍历
+ * five-hundred-and-ninety: 590. N 叉树的后序遍历
  * 解题思路
  * 1. 暴力： 按照后序遍历
  */

@@ -1,5 +1,5 @@
 /**
- * seven: 整数反转
+ * seven: 7. 整数反转
  * 解题思路：
  * 1. 暴力：tostring -> reverse -> tonumber
  * 2. 除10取余

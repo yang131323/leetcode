@@ -1,5 +1,5 @@
 /**
- * nine hundred and twelve：排序数组
+ * nine hundred and twelve：912. 排序数组
  * 暴力：直接使用语言自带的排序算法
  * 1. 冒泡排序 - end
  * 2. 快排 - end

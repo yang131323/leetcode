@@ -1,5 +1,5 @@
 /** 
- * one thousand one hundred and sixty: 拼写单词
+ * one thousand one hundred and sixty: 1160. 拼写单词
  * 解题思路：
  * 1. 建立字母表map，并记录出现次数，时间复杂度O(l ^ 2)
  */
