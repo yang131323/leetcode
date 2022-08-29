@@ -38,34 +38,70 @@
  * @param {character[][]} grid
  * @return {number}
  */
+// function numIslands (grid) {
+//     const row = grid.length, column = grid[0].length, stack = [];
+//     let num = 0;
+//     for (let x = 0; x < row; x++) {
+//         for (let y = 0; y < column; y++) {
+//             if (grid[x][y] != 1) continue;
+//             num++;
+//             grid[x][y] = 0;
+//             stack.push({x, y});
+//             while (stack.length) {
+//                 const node = stack.shift();
+//                 if (node.x - 1 >= 0 && grid[node.x - 1][node.y] == 1) {
+//                     stack.push({ x: node.x - 1, y: node.y });
+//                     grid[node.x - 1][node.y] = 0;
+//                 }
+//                 if (node.y + 1 < column && grid[node.x][node.y + 1] == 1) {
+//                     stack.push({ x: node.x, y: node.y + 1 });
+//                     grid[node.x][node.y + 1] = 0;
+//                 }
+//                 if (node.x + 1 < row && grid[node.x + 1][node.y] == 1) {
+//                     stack.push({ x: node.x + 1, y: node.y });
+//                     grid[node.x + 1][node.y] = 0;
+//                 }
+//                 if (node.y - 1 >= 0 && grid[node.x][node.y - 1] == 1) {
+//                     stack.push({ x: node.x, y: node.y - 1 });
+//                     grid[node.x][node.y - 1] = 0;
+//                 }
+//             }
+//         }
+//     }
+//     return num;
+// }
+
+function dfs (grid, x, y) {
+    const col = grid.length, row = grid[0].length, queue = [{r: x, c: y}];
+    while (queue.length) {
+        const { c, r } = queue.shift(), fx = c - 1, fy = r - 1, nx = c + 1, ny = r + 1;
+        if (fy >= 0 && grid[fy][c] == '1') {
+            grid[fy][c] = '0';
+            queue.push({ r: fy, c });
+        }
+        if (nx < col && grid[r][nx] == '1') {
+            grid[r][nx] = '0';
+            queue.push({ r, c: nx });
+        }
+        if (ny < row && grid[ny][c] == '1') {
+            grid[ny][c] = '0';
+            queue.push({ r: ny, c });
+        }
+        if (fx >= 0 && grid[r][fx] == '1') {
+            grid[r][fx] = '0';
+            queue.push({ r, c: fx });
+        }
+    }
+}
+
 function numIslands (grid) {
-    const row = grid.length, column = grid[0].length, stack = [];
-    let num = 0;
-    for (let x = 0; x < row; x++) {
-        for (let y = 0; y < column; y++) {
-            if (grid[x][y] != 1) continue;
+    if (!grid.length) return 0;
+    let num = 0, row = grid.length, col = grid[0].length;
+    for (let i = 0; i < row; i++) {
+        for (let j = 0; j < col; j++) {
+            if (grid[i][j] == '0') continue;
+            dfs(grid, i, j);
             num++;
-            grid[x][y] = 0;
-            stack.push({x, y});
-            while (stack.length) {
-                const node = stack.shift();
-                if (node.x - 1 >= 0 && grid[node.x - 1][node.y] == 1) {
-                    stack.push({ x: node.x - 1, y: node.y });
-                    grid[node.x - 1][node.y] = 0;
-                }
-                if (node.y + 1 < column && grid[node.x][node.y + 1] == 1) {
-                    stack.push({ x: node.x, y: node.y + 1 });
-                    grid[node.x][node.y + 1] = 0;
-                }
-                if (node.x + 1 < row && grid[node.x + 1][node.y] == 1) {
-                    stack.push({ x: node.x + 1, y: node.y });
-                    grid[node.x + 1][node.y] = 0;
-                }
-                if (node.y - 1 >= 0 && grid[node.x][node.y - 1] == 1) {
-                    stack.push({ x: node.x, y: node.y - 1 });
-                    grid[node.x][node.y - 1] = 0;
-                }
-            }
         }
     }
     return num;
