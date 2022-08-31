@@ -54,30 +54,49 @@
  * @param {string} s
  * @return {string}
  */
-function longestPalindrome (s) {
-    const len = s.length;
-    const arr = [];
-    arr.length = len;
-    for (let i = 0; i < len; i++) {
-        arr[i] = [];
-    }
-    let begin = 0;
-    let maxLen = 0;
-    for (let j = 0; j < len; j++) {
+// function longestPalindrome (s) {
+//     const len = s.length;
+//     const arr = [];
+//     arr.length = len;
+//     for (let i = 0; i < len; i++) {
+//         arr[i] = [];
+//     }
+//     let begin = 0;
+//     let maxLen = 0;
+//     for (let j = 0; j < len; j++) {
+//         for (let i = 0; i <= j; i++) {
+//             if (s[i] != s[j]) {
+//                 arr[i][j] = false;
+//             } else if (j - i < 3) { // j - i - (i + 1) + 1
+//                 arr[i][j] = true;
+//             } else {
+//                 arr[i][j] = !!arr[i + 1][j - 1];
+//             }
+//             const strLen = j - i + 1;
+//             if (arr[i][j] && strLen > maxLen) {
+//                 begin = i;
+//                 maxLen = strLen;
+//             }
+//         }
+//     }
+//     return s.substring(begin, begin + maxLen);
+// }
+
+/**
+ * 动态规划
+ * @param {string} s
+ * @return {string}
+ */
+var longestPalindrome = function(s) {
+    let res = '', dp = [];
+    for (let j = 0; j < s.length; j++) {
+        dp[j] = [];
         for (let i = 0; i <= j; i++) {
-            if (s[i] != s[j]) {
-                arr[i][j] = false;
-            } else if (j - i < 3) { // j - i - (i + 1) + 1
-                arr[i][j] = true;
-            } else {
-                arr[i][j] = !!arr[i + 1][j - 1];
-            }
-            const strLen = j - i + 1;
-            if (arr[i][j] && strLen > maxLen) {
-                begin = i;
-                maxLen = strLen;
+            if (s[i] === s[j] && ((j - i) <= 2 || dp[i + 1][j - 1])) {
+                dp[i][j] = true;
+                res = res.length < (j - i + 1) ? s.substring(i, j + 1) : res;
             }
         }
     }
-    return s.substring(begin, begin + maxLen);
-}
+    return res;
+};

@@ -42,3 +42,15 @@ function lengthOfLongestSubstring (s) {
     }
     return result;
 }
+
+// var lengthOfLongestSubstring = function(s) {
+//     let max = 0, left = 0, map = new Map();
+//     for (let i = 0; i < s.length; i++) {
+//         if (map.has(s[i]) && map.get(s[i]) >= left) {
+//             max = Math.max(max, i - left);
+//             left = map.get(s[i]) + 1;
+//         }
+//         map.set(s[i], i);
+//     }
+//     return Math.max(max, s.length - left);
+// };
