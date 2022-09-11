@@ -1,6 +1,6 @@
 /**
  * sixty two: 剑指 Offer 62. 圆圈中最后剩下的数字
- * 解题思路：
+ * 解题思路：约瑟夫环问题
  * 1. 暴力，构建链表
  * 2. 数学方式（https://leetcode.cn/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/solution/javajie-jue-yue-se-fu-huan-wen-ti-gao-su-ni-wei-sh/）
  */
